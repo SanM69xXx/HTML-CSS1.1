@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda de Zapatos</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <header>
@@ -21,26 +22,32 @@
     <section id="home">
         <h2>Bienvenido a nuestra tienda</h2>
         <p>Encuentra los mejores zapatos al mejor precio.</p>
-        <img src="nike.jfif" alt="Zapatos elegantes">
+        
     </section>
 
     <section id="productos">
         <h2>Nuestros Productos</h2>
-        <article>
-            <h3>Zapatillas Deportivas</h3>
-            <p>Perfectas para correr y actividades al aire libre.</p>
-            <a href="#comprar">Comprar ahora</a>
-        </article>
-        <article>
-            <h3>Zapatos Formales</h3>
-            <p>Elegancia y estilo para tus eventos importantes.</p>
-            <a href="#comprar">Comprar ahora</a>
-        </article>
-        <article>
-            <h3>Botas</h3>
-            <p>Resistencia y confort para cualquier clima.</p>
-            <a href="#comprar">Comprar ahora</a>
-        </article>
+        <div class="productos-container">
+            <article>
+                <img src="nike1.jfif" alt="Zapatilla Deportiva 1">
+                <h3>Zapatilla Deportiva 1</h3>
+                <p>Perfecta para correr y actividades al aire libre.</p>
+                <a href="detalle.html?id=1">Ver Detalles</a>
+            </article>
+            <article>
+                <img src="nike2.jfif" alt="Zapatilla Deportiva 2">
+                <h3>Zapatilla Deportiva 2</h3>
+                <p>Ideal para tus entrenamientos.</p>
+                <a href="detalle.html?id=2">Ver Detalles</a>
+            </article>
+            <article>
+                <img src="nike3.jfif" alt="Zapatilla Deportiva 3">
+                <h3>Zapatilla Deportiva 3</h3>
+                <p>Comodidad y estilo para cualquier ocasión.</p>
+                <a href="detalle.html?id=3">Ver Detalles</a>
+            </article>
+            <!-- Puedes agregar más artículos si lo necesitas -->
+        </div>
     </section>
 
     <footer>

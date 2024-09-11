@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Producto</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Detalle del Producto</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="detalle-producto">
+        <h2 id="producto-nombre">Producto: </h2>
+        <img id="producto-imagen" src="" alt="Imagen del Producto">
+        <p id="producto-descripcion">Descripción: </p>
+        <p id="producto-precio">Precio: </p>
+        <button id="comprar-btn">Comprar ahora</button>
+    </section>
+
+    <footer>
+        <p>© 2024 Tienda de Zapatos. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Datos de los productos
+        const productos = {
+            1: {
+                nombre: "Zapatilla Deportiva 1",
+                descripcion: "Perfecta para correr y actividades al aire libre.",
+                precio: 50,
+                imagen: "nike1.jfif"
+            },
+            2: {
+                nombre: "Zapatilla Deportiva 2",
+                descripcion: "Ideal para tus entrenamientos.",
+                precio: 75,
+                imagen: "nike2.jfif"
+            },
+            3: {
+                nombre: "Zapatilla Deportiva 3",
+                descripcion: "Comodidad y estilo para cualquier ocasión.",
+                precio: 100,
+                imagen: "nike3.jfif"
+            }
+        };
+
+        // Obtener el ID del producto desde la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productoId = urlParams.get('id');
+
+        // Obtener el producto correspondiente
+        const producto = productos[productoId];
+
+        if (producto) {
+            // Actualizar el contenido de la página con los detalles del producto
+            document.getElementById('producto-nombre').innerText = `Producto: ${producto.nombre}`;
+            document.getElementById('producto-descripcion').innerText = `Descripción: ${producto.descripcion}`;
+            document.getElementById('producto-precio').innerText = `Precio: $${producto.precio}`;
+            document.getElementById('producto-imagen').src = producto.imagen;
+            document.getElementById('producto-imagen').alt = producto.nombre;
+        } else {
+            // Si no hay un producto con ese ID, mostrar un mensaje de error
+            document.getElementById('detalle-producto').innerHTML = "<p>Producto no encontrado.</p>";
+        }
+
+        // Lógica del botón de compra
+        document.getElementById('comprar-btn').addEventListener('click', function() {
+            // Declaración de variables con 'let'
+let producto1 = "Zapatilla Deportiva 1";
+let precio1 = 50;
+let producto2 = "Zapatilla Deportiva 2";
+let precio2 = 75;
+let producto3 = "Zapatilla Deportiva 3";
+let precio3 = 100;
+let cantidadProducto1 = 2;
+let cantidadProducto2 = 1;
+let cantidadProducto3 = 3;
+let totalCompra = 0;
+
+// Declaración de constantes
+const descuentoProducto1 = 0.1;  // 10% de descuento
+const descuentoProducto2 = 0.15; // 15% de descuento
+const descuentoProducto3 = 0.2;  // 20% de descuento
+const limiteParaDescuento = 100;
+const mensajeCompra = "Gracias por tu compra";
+
+// Operaciones
+let subtotalProducto1 = precio1 * cantidadProducto1;
+let subtotalProducto2 = precio2 * cantidadProducto2;
+let subtotalProducto3 = precio3 * cantidadProducto3;
+
+// Aplicación de descuentos usando operador ternario
+let precioFinalProducto1 = subtotalProducto1 > limiteParaDescuento ? subtotalProducto1 * (1 - descuentoProducto1) : subtotalProducto1;
+let precioFinalProducto2 = subtotalProducto2 > limiteParaDescuento ? subtotalProducto2 * (1 - descuentoProducto2) : subtotalProducto2;
+let precioFinalProducto3 = subtotalProducto3 > limiteParaDescuento ? subtotalProducto3 * (1 - descuentoProducto3) : subtotalProducto3;
+
+// Sumar los totales
+totalCompra = precioFinalProducto1 + precioFinalProducto2 + precioFinalProducto3;
+
+// Mostrar el total de la compra en la consola
+console.log("Total de la compra: $" + totalCompra.toFixed(2));
+
+// Mostrar mensaje de agradecimiento si la compra supera cierto límite
+let mensajeFinal = totalCompra > limiteParaDescuento ? mensajeCompra : "Sigue comprando para obtener descuentos adicionales";
+console.log(mensajeFinal);
+
+// Manejar el evento de compra
+document.getElementById('comprar-btn').addEventListener('click', function() {
+    alert(`Total a pagar: $${totalCompra.toFixed(2)}\n${mensajeFinal}`);
+});
+
+         
+        });
+    </script>
+</body>
+</html>
+
